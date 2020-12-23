@@ -17,6 +17,7 @@ public class TestDataBuild {
 		place.setWebsite("website");
 		place.setName("Frontline house");
 		place.setPhone_number("(+91) 983 893 3937");
+		place.setWebsite("www.peter.com");
 		
 		Location loc = new Location();
 		loc.setLat(-38.383494);

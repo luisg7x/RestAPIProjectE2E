@@ -10,7 +10,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -26,19 +25,22 @@ public class MyStepDefinitions extends Utils{
 	private ResponseSpecification res;
 	private Response response;
 	
+	private RequestSpecification req;
+	
     @Given("^Add place payload$")
     public void add_place_payload() throws Throwable {
 
-		res = new ResponseSpecBuilder().expectStatusCode(200)
-				.expectContentType(ContentType.JSON).build();
+    	req = given().spec(requestSpecification())
+    			.body(TestDataBuild.addPlacePayload());
 		
     }
 
     @When("^User calls \"([^\"]*)\" Api with Post http request$")
     public void user_calls_something_api_with_post_http_request(String strArg1) throws Throwable {
-    						//calling method from utils parent class
-    	 response = given().spec(requestSpecification()).body(TestDataBuild.addPlacePayload()).post("/maps/api/place/add/json").
-				then().spec(res).extract().response();
+    	
+    	res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+    	
+    	response = req.when().post("/maps/api/place/add/json").then().spec(res) .extract().response();
     	
     }
 
