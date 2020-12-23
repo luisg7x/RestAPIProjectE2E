@@ -34,7 +34,7 @@
     <scope>test</scope>
 </dependency>
    	
-   	<!-- https://mvnrepository.com/artifact/junit/junit .. for cucumber -->
+   	<!-- https://mvnrepository.com/artifact/junit/junit .. for cucumber alwaus hace only one version and the most updated version-->
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
