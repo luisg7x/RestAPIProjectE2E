@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/java/features",
 		glue = "stepDefinitions")
 //features; if want run specific file use "src/test/java/features.Login.feature", if not just use the line like now, and will find all.features
-//glue: write the packageName of stepdefinition.class
+//glue: write the packageName of stepdefinition.class 
 public class TestRunner {
 	
 }
