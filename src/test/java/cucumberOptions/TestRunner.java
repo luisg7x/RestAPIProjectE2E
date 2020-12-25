@@ -9,7 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/java/features",
-		glue = "stepDefinitions")
+		glue = "stepDefinitions",
+		//tags for run only one test with the tag
+		tags ="@DeletePlace"
+		)
 //features; if want run specific file use "src/test/java/features.Login.feature", if not just use the line like now, and will find all.features
 //glue: write the packageName of stepdefinition.class 
 public class TestRunner {
