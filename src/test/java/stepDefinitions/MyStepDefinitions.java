@@ -16,6 +16,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import resources.APIResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -27,21 +28,29 @@ public class MyStepDefinitions extends Utils{
 	
 	private RequestSpecification req;
 	
-    @Given("^Add place payload$")
-    public void add_place_payload() throws Throwable {
+	 @Given("^Add place payload with (.+), (.+) and (.+)$")
+	   public void add_place_payload_with_and(String name, String languaje, String address)  throws Throwable {
 
     	req = given().spec(requestSpecification())
-    			.body(TestDataBuild.addPlacePayload());
+    			.body(TestDataBuild.addPlacePayload(name, languaje, address));
 		
     }
 
-    @When("^User calls \"([^\"]*)\" Api with Post http request$")
-    public void user_calls_something_api_with_post_http_request(String strArg1) throws Throwable {
+	 @When("^User calls \"([^\"]*)\" Api with \"([^\"]*)\" http request$")
+	 public void user_calls_something_api_with_something_http_request(String resource, String httpMethod) throws Throwable {
     	
     	res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
     	
-    	response = req.when().post("/maps/api/place/add/json").then().spec(res) .extract().response();
+    					//use value of instead if/else and switch using constructor
+    	APIResources resAPI = APIResources.valueOf(resource);
+    	String resou = resAPI.getResource();
     	
+    	if (httpMethod.equalsIgnoreCase("post")) {
+    		response = req.when().post(resou);
+    	}else if (httpMethod.equalsIgnoreCase("get")) {
+    		response = req.when().get(resou);
+    	}
+    	//.then().spec(res).extract().response()	
     }
 
     @Then("^The API call got success with status code \"([^\"]*)\"$")
@@ -53,12 +62,16 @@ public class MyStepDefinitions extends Utils{
 
     @And("^\"([^\"]*)\" in response is \"([^\"]*)\"$")
     public void something_in_response_is_something(String key, String expectedValor) throws Throwable {
+
+    	assertEquals(getJsonPath(response, key), expectedValor);
     	
-    	String responseST = response.asString();
-    	JsonPath js = new JsonPath(responseST);
+    }
+    
+    @And("^Verify place_Id created maps to (.+) using \"([^\"]*)\"$")
+    public void verify_placeid_created_maps_to_using_something(String name, String strArg1) throws Throwable {
     	
-    	assertEquals(js.get(key).toString(), expectedValor);
-    	
+    	req = given().spec(requestSpecification()).queryParam("place_id", getJsonPath(response, "place_id"))
+    			
     }
 
 }

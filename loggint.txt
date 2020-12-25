@@ -16,18 +16,18 @@ Body:
         "lng": 33.427362
     },
     "accuracy": 50,
-    "name": "Frontline house",
+    "name": "Axo",
     "phone_number": "(+91) 983 893 3937",
-    "address": "29, side layout, cohen 09",
+    "address": "World cross center",
     "types": [
         "shop",
         "school"
     ],
-    "website": "website",
-    "language": "French-IN"
+    "website": "www.peter.com",
+    "language": "English-EN"
 }
 HTTP/1.1 200 OK
-Date: Wed, 23 Dec 2020 19:55:55 GMT
+Date: Thu, 24 Dec 2020 01:24:41 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,8 +40,102 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "5384d70f4574d44265638e7dce7721cb",
+    "place_id": "4a0f04783fc696c9c3ca4ffb983dddc7",
     "scope": "APP",
-    "reference": "d6b117f430807faa3bbe4bd0083868d8d6b117f430807faa3bbe4bd0083868d8",
-    "id": "d6b117f430807faa3bbe4bd0083868d8"
+    "reference": "e08b7321bc5892e22b6b7b81c3611d8fe08b7321bc5892e22b6b7b81c3611d8f",
+    "id": "e08b7321bc5892e22b6b7b81c3611d8f"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383494,
+        "lng": 33.427362
+    },
+    "accuracy": 50,
+    "name": "Ara",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Camp-Nou",
+    "types": [
+        "shop",
+        "school"
+    ],
+    "website": "www.peter.com",
+    "language": "Spanish-ES"
+}
+HTTP/1.1 200 OK
+Date: Thu, 24 Dec 2020 01:24:43 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "ee08f63a246ac727b29a8f9a5f8144c7",
+    "scope": "APP",
+    "reference": "adb3a5b9c598fbbbe027a41965803084adb3a5b9c598fbbbe027a41965803084",
+    "id": "adb3a5b9c598fbbbe027a41965803084"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383494,
+        "lng": 33.427362
+    },
+    "accuracy": 50,
+    "name": "Kai",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Madrid",
+    "types": [
+        "shop",
+        "school"
+    ],
+    "website": "www.peter.com",
+    "language": "Spanish-ES"
+}
+HTTP/1.1 200 OK
+Date: Thu, 24 Dec 2020 01:24:45 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "5f001cde0b0249a3fbd6aea4bd91ea5b",
+    "scope": "APP",
+    "reference": "9f455274d04113a344b1c269ae512e279f455274d04113a344b1c269ae512e27",
+    "id": "9f455274d04113a344b1c269ae512e27"
 }
