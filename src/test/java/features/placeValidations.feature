@@ -1,5 +1,5 @@
 Feature: Validating place API's
-#tagging the test with the @, go to Testrunner and see how run only one test etc
+#tagging the test with the @, go to Testrunner and see how run only one test etc, You can tag multiples test with the same name on cucumber for regression test or smorke etc
 @AddPlace
 Scenario Outline: Verify if place is beaing succesfully added using AddPlaceAPI
 Given Add place payload with <name>, <languaje> and <address>

@@ -10,6 +10,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/java/features",
 		glue = "stepDefinitions",
+		//plugin: part of cucumber reporting
+		plugin="json:target/jsonReports/cucumber-report.json",
 		//tags for run only one test with the tag
 		tags ="@DeletePlace"
 		)
