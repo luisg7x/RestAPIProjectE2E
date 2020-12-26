@@ -1,6 +1,7 @@
 Feature: Validating place API's
 #tagging the test with the @, go to Testrunner and see how run only one test etc, You can tag multiples test with the same name on cucumber for regression test or smorke etc
-@AddPlace
+#Double tagging is posible
+@AddPlace @Regression
 Scenario Outline: Verify if place is beaing succesfully added using AddPlaceAPI
 Given Add place payload with <name>, <languaje> and <address>
 When User calls "addPlaceAPI" Api with "Post" http request
@@ -19,7 +20,7 @@ Examples:
 |Ara	| Spanish-ES| Camp-Nou				|
 |Kai	| Spanish-ES| Madrid				|		
 
-@DeletePlace
+@DeletePlace @Regression
 Scenario: Verify if delete place functionality is working
 Given DeletePlace Payload
 When  User calls "deletePlaceAPI" Api with "Post" http request
